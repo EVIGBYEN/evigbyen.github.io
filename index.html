@@ -1,0 +1,1564 @@
+<!DOCTYPE HTML>
+<html class="small-scroll-bar no-js bg cool-transparent" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta charset="UTF-8">
+    <!--IE 8浏览器的页面渲染方式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!--默认使用极速内核：针对国内浏览器产商-->
+    <meta name="renderer" content="webkit">
+    <!--chrome Android 地址栏颜色-->
+    <meta name="theme-color" content="#3a3f51" />
+    <!--    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">-->
+    <!--    <meta name="mobile-web-app-capable" content="yes">-->
+    <!--    <meta name="apple-mobile-web-app-capable" content="yes">-->
+    <!--    <meta name="apple-mobile-web-app-status-bar-style" content="default">-->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <title>YANG YAO - PAGE</title>
+    <link rel="icon" type="image/ico" href="./figures/logo.ico">
+    <meta name="description" content="EvigByen" />
+
+    <link rel="pingback" href="./configurations/index.php/action/xmlrpc" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="./configurations/index.php/action/xmlrpc?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./configurations/index.php/action/xmlrpc?wlw" />
+    <link rel="alternate" type="application/rss+xml" title="EvigByen &raquo; RSS 2.0"
+        href="./configurations/index.php/feed/" />
+    <link rel="alternate" type="application/rdf+xml" title="EvigByen &raquo; RSS 1.0"
+        href="./configurations//index.php/feed/rss/" />
+    <link rel="alternate" type="application/atom+xml" title="EvigByen &raquo; ATOM 1.0"
+        href="./configurations/index.php/feed/atom/" />
+
+
+
+    <script type="text/javascript">
+
+        window['LocalConst'] = {
+            //base
+            BLOG_URL: 'https://evigbyen.github.io/',
+            BLOG_URL_N: 'https://evigbyen.github.io/',
+
+            //pjax
+            IS_PJAX: '1',
+            IS_PAJX_COMMENT: '1',
+            PJAX_ANIMATE: 'default',
+            PJAX_TO_TOP: 'auto',
+            TO_TOP_SPEED: '100',
+
+            USER_COMPLETED: { "data": "" },
+            VDITOR_COMPLETED: { "data": "" },
+
+            //option
+            TOC_TITLE: 'Article Directory',
+            HEADER_FIX: 'Fix head',
+            ASIDE_FIX: 'Fix navigation',
+            ASIDE_FOLDED: 'Fold navigation',
+            ASIDE_DOCK: 'Top navigation',
+            CONTAINER_BOX: 'Box model',
+            DARK_MODE: 'Dark Mode',
+            DARK_MODE_AUTO: 'Dark Mode(Auto)',
+            DARK_MODE_FIXED: 'Dark Mode(Fixed)',
+            EDITOR_CHOICE: 'origin',
+            NO_LINK_ICO: '',
+            NO_SHOW_RIGHT_SIDE_IN_POST: '1',
+
+            CDN_NAME: '',
+            LAZY_LOAD: '',
+            PAGE_ANIMATE: '',
+            THEME_COLOR: '8',
+            THEME_COLOR_EDIT: '',
+            THEME_HEADER_FIX: '1',
+            THEME_ASIDE_FIX: '1',
+            THEME_ASIDE_FOLDED: '',
+            THEME_ASIDE_DOCK: '',
+            THEME_CONTAINER_BOX: '',
+            THEME_HIGHLIGHT_CODE: '1',
+            THEME_TOC: '1',
+            THEME_DARK_MODE: 'light',
+
+            THEME_DARK_MODE_VALUE: 'light',
+            SHOW_SETTING_BUTTON: '',
+
+            THEME_DARK_HOUR: '18',
+            THEME_LIGHT_HOUR: '8',
+            THUMB_STYLE: 'normal',
+            AUTO_READ_MODE: '',
+            SHOW_LYRIC: '',
+            AUTO_SHOW_LYRIC: '1',
+            //代码高亮
+            CODE_STYLE_LIGHT: 'mac_light',
+            CODE_STYLE_DARK: 'mac_dark',
+            THEME_POST_CONTENT: '2',
+            //other
+            OFF_SCROLL_HEIGHT: '55',
+            SHOW_IMAGE_ALT: '1',
+            USER_LOGIN: '1',
+            USE_CACHE: '',
+            POST_SPEECH: '1',
+            POST_MATHJAX: '',
+            SHOW_FOOTER: '1',
+            IS_TRANSPARENT: '1',
+            LOADING_IMG: '',
+            PLUGIN_READY: '1',
+            FIRST_SCREEN_ANIMATE: '',
+            RENDER_LANG: 'en',
+            SERVICE_WORKER_INSTALLED: false,
+            CLOSE_LEFT_RESIZE: '1',
+            CLOSE_RIGHT_RESIZE: '1',
+            CALENDAR_GITHUB: '',
+            LATEST_POST_TIME: '1749628332',
+            LATEST_TIME_COMMENT_TIME: '1689090156',
+            LEFT_LOCATION: '1',
+        };
+
+    </script>
+
+    <!-- 第三方CDN加载CSS -->
+    <link href="./configurations/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- 本地css静态资源 -->
+
+    <link rel="stylesheet" href="./configurations/function.min.css?v=9.2.120230801501" type="text/css" />
+    <link rel="stylesheet" href="./configurations/handsome.min.css?v=9.2.120230801501" type="text/css" />
+
+
+
+    <!--主题组件css文件加载-->
+    <link id="cool_opacity" rel="stylesheet" href="./configurations/coolopacity.min.css" type="text/css" />
+
+    <style>
+        .cool-transparent .app:before {
+            background-color: rgba(0, 0, 0, 0.3) !important;
+        }
+
+        @supports (-webkit-backdrop-filter:none) or (backdrop-filter:none) {
+            #footer {
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+            }
+
+            .right_panel.panel {
+                background-color: rgba(255, 255, 255, 0.3);
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+            }
+
+            .app-aside-fix #aside #left_footer {
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+            }
+
+            .modal-content {
+                background: rgba(0, 0, 0, 0.14);
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+            }
+
+            @media (max-width: 767px) {
+
+                #header {
+                    -webkit-backdrop-filter: blur(5px);
+                    backdrop-filter: blur(5px);
+                }
+            }
+
+            @media (min-width: 767px) {
+                #handsome_global_player .aplayer-list {
+                    background: rgba(0, 0, 0, 0.14);
+                    -webkit-backdrop-filter: blur(5px);
+                    backdrop-filter: blur(5px);
+                    color: #fff;
+                }
+
+                .dropdown-menu {
+                    background: rgba(0, 0, 0, 0.14);
+                    -webkit-backdrop-filter: blur(5px);
+                    backdrop-filter: blur(5px);
+                }
+
+                .app-aside-dock .app-aside .navi>ul>li .nav-sub {
+                    background: rgba(0, 0, 0, 0.14);
+                    -webkit-backdrop-filter: blur(5px);
+                    backdrop-filter: blur(5px);
+                }
+            }
+        }
+    </style>
+
+    <!--引入英文字体文件-->
+    <link rel="stylesheet preload" href="./configurations/font.min.css?v=9.2.120230801501" as="style" />
+
+    <style type="text/css">
+        html.bg {
+            background: url(./figures/background_a.png) center center no-repeat no-repeat fixed #6A6B6F;
+            background-size: cover;
+        }
+
+        .cool-transparent .off-screen+#content {
+            background: url(/.ures/background_a.png) center center no-repeat no-repeat fixed #6A6B6F;
+            background-size: cover;
+        }
+
+        @media (max-width:767px) {
+            html.bg {
+                background: url(./figures/background_b.png) center center no-repeat no-repeat fixed #6A6B6F;
+                background-size: cover;
+            }
+
+            .cool-transparent .off-screen+#content {
+                background: url(./figures/background_b.png) center center no-repeat no-repeat fixed #6A6B6F;
+                background-size: cover;
+            }
+        }
+
+        /*Google Fonts*/
+        @font-face {
+            font-family: 'Noto Serif SC';
+            font-style: normal;
+            font-weight: regular;
+            src: url('//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.eot');
+            /* IE9 Compat Modes */
+            src: local('Noto Serif SC'), local('NotoSerif SC-Normal'),
+                url('//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.woff2') format('woff2'),
+                /* Super Modern Browsers */
+                url('//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.woff') format('woff'),
+                /* Modern Browsers */
+                url('//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+                url('//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.svg#NotoSerif SC') format('svg');
+            /* Legacy iOS */
+        }
+
+        @font-face {
+            font-family: 'Quicksand';
+            font-style: normal;
+            font-weight: regular;
+            src: url('//lib.baomitu.com/fonts/quicksand/quicksand-regular.eot');
+            /* IE9 Compat Modes */
+            src: local('Quicksand'), local('Quicksand-Normal'),
+                url('//lib.baomitu.com/fonts/quicksand/quicksand-regular.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('//lib.baomitu.com/fonts/quicksand/quicksand-regular.woff2') format('woff2'),
+                /* Super Modern Browsers */
+                url('//lib.baomitu.com/fonts/quicksand/quicksand-regular.woff') format('woff'),
+                /* Modern Browsers */
+                url('//lib.baomitu.com/fonts/quicksand/quicksand-regular.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+                url('//lib.baomitu.com/fonts/quicksand/quicksand-regular.svg#Quicksand') format('svg');
+            /* Legacy iOS */
+        }
+
+        * {
+            font-family: 'Quicksand', 'Noto Serif SC';
+        }
+
+
+
+        /*头像旋转*/
+        .img-circle {
+            border-radius: 80%;
+            animation: light 5s ease-in-out infinite;
+            transition: 0.5s;
+        }
+
+        .img-circle:hover {
+            transform: scale(1.1) rotate(-30deg);
+        }
+
+        @keyframes light {
+            0% {
+                box-shadow: 0 0 4px #000000;
+            }
+
+            25% {
+                box-shadow: 0 0 16px #000000;
+            }
+
+            50% {
+                box-shadow: 0 0 4px #000000;
+            }
+
+            75% {
+                box-shadow: 0 0 16px #000000;
+            }
+
+            100% {
+                box-shadow: 0 0 4px #000000;
+            }
+        }
+    </style>
+
+    <!--全站jquery-->
+    <script src="./configurations/jquery.min.js"></script>
+
+
+
+</head>
+
+<body id="body" class="fix-padding skt-loading">
+
+
+    <!-- aside -->
+
+    <div id="alllayout" class="app app-aside-fix no-container app-header-fixed "> <!-- headnav -->
+        <header id="header" class="app-header navbar box-shadow-bottom-lg fix-padding" role="menu">
+            <!-- navbar header（交集处） -->
+            <div id="header_left" class="text-ellipsis navbar-header bg-dark" style="background-color: #161824;">
+                <button class="pull-right visible-xs" ui-toggle-class="show animated animated-lento fadeIn"
+                    target=".navbar-collapse">
+                    <span class="menu-icons"><i data-feather="search"></i></span>
+                </button>
+                <button class="pull-left visible-xs" ui-toggle-class="off-screen animated" target=".app-aside"
+                    ui-scroll="app">
+                    <span class="menu-icons"><i data-feather="menu"></i></span>
+                </button>
+                <!-- brand -->
+                <a href="https://evigbyen.github.io/" class="navbar-brand text-lt">
+                    <span id="navbar-brand-day">
+                        <span class="hidden-folded m-l-xs">evigbyen.github.io</span>
+                    </span>
+                </a>
+                <!-- / brand -->
+            </div>
+            <!-- / navbar header -->
+
+            <!-- navbar collapse（顶部导航栏） -->
+            <div id="header_right" class="collapse pos-rlt navbar-collapse bg-dark" style="background-color: #161824;">
+                <!-- statitic info-->
+                <ul class="nav navbar-nav hidden-sm">
+                    <li class="dropdown pos-stc">
+
+                        <a id="statistic_pane" data-status="false" href="#" data-toggle="dropdown"
+                            class="dropdown-toggle feathericons dropdown-toggle" aria-expanded="false">
+                            <i data-feather="paperclip"></i>
+                            <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu wrapper w-full bg-white">
+                            <div class="row">
+
+                                <div class="col-sm-8 b-l b-light">
+                                    <div class="m-l-xs m-t-xs m-b-sm font-bold">Academia Summary<div class="text-muted"
+                                            style="font-size: 12px">A Brief Summary of YANG, YAO's Academia</div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-sm-4 b-l b-light">
+                                    <div class="m-l-xs m-t-xs m-b-sm font-bold">Current Stage</div>
+                                    <div class="text-center">
+                                        <div class="text-muted m-l-xs " style="font-size: 12px">Pursuing PhD
+                                            Opportunities</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4 b-l b-light">
+                                    <div class="m-l-xs m-t-xs m-b-sm font-bold">Education</div>
+                                    <div class="text-center">
+                                        <div class="text-muted m-l-xs " style="font-size: 12px">MSc in Artificial
+                                            Intelligence<br>BEng in Data Science and Big Data Technology</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 b-l b-light">
+                                    <div class="m-l-xs m-t-xs m-b-sm font-bold">Publications</div>
+                                    <div class="text-center">
+                                        <div class="text-muted m-l-xs " style="font-size: 12px">1 Accepted by ACL
+                                            2025<br>4 Under Review</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 b-l b-light">
+                                    <div class="m-l-xs m-t-xs m-b-sm font-bold">Research Interests</div>
+                                    <div class="text-center">
+                                        <div class="text-muted m-l-xs " style="font-size: 12px">Multimodal Large
+                                            Language Models<br>Reinforcement Learning</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <!--登录管理-->
+                    <li class="dropdown" id="easyLogin">
+                        <a onclick="return false" data-toggle="dropdown" class="dropdown-toggle clear"
+                            data-toggle="dropdown">
+                            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                                <img class="img-circle img-40px" src="./figures/profile_finer.png">
+                                <i class="on md b-white bottom"></i>
+                            </span>
+                            <span class="hidden-sm hidden-md">Visitor</span>
+                            <b class="caret"></b><!--下三角符号-->
+                        </a>
+                        <!-- dropdown(已经登录) -->
+                        <ul class="dropdown-menu animated fadeInRight" id="Logged-in">
+                            <li class="wrapper b-b m-b-sm bg-white m-t-n-xs">
+                                <div>
+                                    <p>A Hearty Welcome! <br><i>from YANG, YAO </i>😄</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="mailto:yaoyangacademia@outlook.com"><span class="feathericons icon-search"
+                                        style="margin-right: 10px; align-items: center;"><i
+                                            data-feather="help-circle"></i></span><span>Report Issues</span></a>
+                            </li>
+
+                        </ul>
+                        <!-- / dropdown(已经登录) -->
+                    </li>
+                    <!--/登录管理-->
+                </ul>
+            </div>
+            <!-- / navbar collapse -->
+        </header>
+        <!-- / headnav -->
+
+        <!--选择侧边栏的颜色-->
+        <aside id="aside" class="gpu-speed app-aside hidden-xs bg-light"> <!--<aside>-->
+            <div class="aside-wrap" layout="column">
+
+                <!-- user -->
+                <div class="clearfix hidden-xs text-center hide  show" id="aside-user">
+                    <div class="dropdown wrapper ">
+                        <div ui-nav>
+                            <a href="https://evigbyen.github.io/">
+                                <span class="thumb-lg w-auto-folded avatar m-t-sm">
+                                    <img src="./figures/profile_idphoto.png" class="img-full img-circle"
+                                        style="margin-top: 10px;">
+                                </span>
+                            </a>
+                        </div>
+
+                        <span class="clear">
+                            <span class="block m-t-sm" style="line-height: 1.6; margin-top: 10px; margin-bottom: 5px;">
+                                <strong class="font-bold text-lt">YANG, YAO</strong><br>
+                                姚&nbsp;&nbsp;洋
+                            </span>
+
+                            <span class="text-muted text-xs block" style="line-height: 1.8; margin-bottom: 0px;">
+                                <i data-feather="terminal" style="width: 10px; height: 10px;"></i>
+                                &nbsp;奔走與揣度在這潮汐。<br>
+                                <i data-feather="map-pin" style="width: 10px; height: 10px;"></i> &nbsp;Shanghai &
+                                Hong Kong SAR</span>
+
+                    </div>
+                </div>
+                <!-- / user -->
+
+                <!-- nav -->
+                <nav ui-nav class="navi clearfix">
+                    <ul class="nav">
+                        <!--index-->
+                        <div class="line dk hidden-folded"></div>
+                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <!--                <span>--><!--</span>-->
+                        </li>
+                        <!--主页-->
+                        <li>
+                            <a href="https://evigbyen.github.io/" class="auto">
+                                <span class="nav-icon"><i data-feather="home"></i></span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <!-- /主页 -->
+                        <li> <a href="#Biography" style="scroll-behavior: smooth;"><span class="nav-icon"><i
+                                        data-feather="cpu"></i></span><span>Biography</span></a></li>
+                        <li> <a href="#Education" style="scroll-behavior: smooth;"><span class="nav-icon"><i
+                                        data-feather="award"></i></span><span>Education</span></a></li>
+                        <li> <a href="#Publications" style="scroll-behavior: smooth;"><span class="nav-icon"><i
+                                        data-feather="book"></i></span><span>Publications</span></a></li>
+                        <li> <a href="#Internship" style="scroll-behavior: smooth;"><span class="nav-icon"><i
+                                        data-feather="briefcase"></i></span><span>Internship</span></a></li>
+                        <li> <a href="#Service" style="scroll-behavior: smooth;"><span class="nav-icon"><i
+                                        data-feather="inbox"></i></span><span>Service</span></a></li>
+
+
+                        <!--    <li class="line dk"></li>  -->
+
+                        <!--Components-->
+
+                    </ul>
+                </nav>
+                <!-- nav -->
+            </div>
+            <!--end of .navi-wrap-->
+            <!--left_footer-->
+            <div id="left_footer" class="footer wrapper-xs text-center nav-xs lt">
+
+                <div class="col-xs-4 no-padder">
+                    <a class="tinav" href="mailto:yaoyangacademia@outlook.com" title="" data-toggle="tooltip"
+                        data-placement="top" data-original-title="yaoyangacademia@outlook.com">
+                        <span class="left-bottom-icons block"><i data-feather="mail"></i></span>
+                        <small class="text-muted">Email</small>
+                    </a>
+                </div>
+                <div class="col-xs-4 no-padder">
+                    <a target="_blank" href="https://scholar.google.com/citations?user=a8-jrAoAAAAJ&hl=en" title=""
+                        data-toggle="tooltip" data-placement="top" data-original-title="Google Scholar">
+                        <span class="left-bottom-icons block"><i data-feather="archive"></i></span>
+                        <small class="text-muted">Scholar</small>
+                    </a>
+                </div>
+                <div class="col-xs-4 no-padder">
+                    <a target="_blank" class="tinav" href="https://github.com/evigbyen" title="" data-toggle="tooltip"
+                        data-placement="top" data-original-title="GitHub Home">
+                        <span class="left-bottom-icons block"><i data-feather="github"></i></span>
+                        <small class="text-muted">GitHub</small>
+                    </a>
+                </div>
+
+
+            </div><!--.aside-wrap-->
+        </aside>
+        <!-- content -->
+
+        <div id="content" class="app-content">
+            <div class="resize-pane">
+                <div id="trigger_left_content" class="trigger_content">
+                    <div class="trigger_drag_content"></div>
+                </div>
+                <div id="trigger_left_button" data-placement="right" data-toggle="tooltip" data-original-title=""
+                    class="normal-widget resize-pane-trigger box-shadow-wrap-lg"><i data-feather="sidebar"></i></div>
+            </div>
+
+
+
+
+
+
+
+            <!-- / aside -->
+
+            <!-- <div id="content" class="app-content"> -->
+
+            <!-- 正文开始 -->
+            <a class="off-screen-toggle hide"></a>
+            <main class="app-content-body ">
+                <div class="hbox hbox-auto-xs hbox-auto-sm">
+                    <div class="col center-part gpu-speed" id="post-panel">
+
+                        <header class="bg-light lter wrapper-md">
+                            <h1 style="line-height: 2.5;" class="m-n text-black l-h">YANG, YAO</h1>
+                            <span style="font-size: 18px;"><class="text-muted letterspacing
+                                    indexWords">小船今已遠航，我最憂鬱的朋友。</span>
+                        </header>
+
+
+
+
+
+
+                        <!-- 介绍 Biography -->
+                        <div id="post-content" class="wrapper-lg" style="margin-top: -10px;">
+                            <script>LocalConst.POST_MATHJAX = ""
+                                LocalConst.EDITOR_CHOICE = "origin"
+                            </script>
+
+                            <div class="entry-content l-h-2x" id="md_handsome_origin">
+                                <h2 id="Biography" style="margin-top: 100vh;">Biography</h2>
+                                <p style="text-align: justify; text-indent: 30px;">
+                                    Completed MSc in Artificial Intelligence at HKU and BEng in Data Science and Big
+                                    Data Technology at NEU, YANG, YAO possesses a solid theoretical foundation in
+                                    mathematics and statistics and extensive practical experience in algorithm
+                                    programming, demonstrates a sustained passion for research and innovation, excels
+                                    under pressure with strong awareness of time constraints, and exhibits patience,
+                                    humility, and a keen aptitude for identifying and solving problems. His interests
+                                    focus on Multimodal Large Language Models and Reinforcement Learning. Currently, he
+                                    is pursuing PhD opportunities to further contribute to these domains.
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <!-- 教育 Education -->
+                        <div class="wrapper-md skt-loading" style="margin-top: -50px;">
+                            <div>
+
+                                <div id="post-content" class="wrapper-sm">
+                                    <script>LocalConst.POST_MATHJAX = ""
+                                        LocalConst.EDITOR_CHOICE = "origin"
+                                    </script>
+
+                                    <div class="entry-content l-h-2x" id="md_handsome_origin">
+                                        <h2 id="Education" style="margin-top: 100vh;">Education</h2>
+                                    </div>
+                                </div>
+
+
+                                <div>
+                                    <div>
+                                        <div class="panel-small single-post box-shadow-wrap-normal">
+                                            <a href="https://www.hku.hk/" target="_blank">
+                                                <div class="index-post-img-small post-feature index-img-small">
+                                                    <div
+                                                        style="display: flex; justify-content: center; align-items: center; height:28vh;">
+                                                        <img src="./figures/institution_hku.png"
+                                                            style="width: 65%; height: auto;">
+                                                    </div>
+                                            </a>
+                                        </div>
+                                        <div class="post-meta wrapper-lg padder-v">
+                                            <div class="post_title_wrapper">
+                                                <h2 class="m-t-xs index-post-title text-title">
+                                                    <a href="https://www.hku.hk/" target="_blank">The University of Hong
+                                                        Kong
+                                                        香港大學</a>
+                                                </h2>
+                                            </div>
+
+                                            <p style="margin-top: 2px; line-height: 1.8;">Master of Science in
+                                                Artificial
+                                                Intelligence 人工智能理學碩士<br>
+                                                Faculty of Science 理學院
+                                            </p>
+                                            <div
+                                                class="text-muted post-item-foot post-item-foot-icon text-ellipsis list-inline">
+                                                <li>
+                                                    <span class="m-r-sm right-small-icons">
+                                                        <i data-feather="user"></i>
+                                                    </span>Supervised by Prof. Yunwen Lei and Dr. Yue Xie
+                                                </li><br>
+                                                <li>
+                                                    <span class="right-small-icons m-r-sm">
+                                                        <i data-feather="clock"></i>
+                                                    </span>
+                                                    Sep 2023 to Jul 2025
+                                                </li>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div>
+                                        <div class="panel-small single-post box-shadow-wrap-normal">
+                                            <a href="https://www.neu.edu.cn/" target="_blank">
+                                                <div class="index-post-img-small post-feature index-img-small">
+                                                    <div
+                                                        style="display: flex; justify-content: center; align-items: center; height:28vh;">
+                                                        <img src="./figures/institution_neu.png"
+                                                            style="width: 83%; height: auto;">
+                                                    </div>
+                                            </a>
+                                        </div>
+                                        <div class="post-meta wrapper-lg padder-v">
+                                            <div class="post_title_wrapper">
+                                                <h2 class="m-t-xs index-post-title text-title">
+                                                    <a href="https://www.neu.edu.cn/" target="_blank">Northeastern
+                                                        University
+                                                        東北大學</a>
+                                                </h2>
+                                            </div>
+
+                                            <p style="margin-top: 2px; line-height: 1.4;">Bachelor of Engineering in
+                                                Data
+                                                Science
+                                                and Big Data Technology<br>數據科學與大數據技術工學學士<br>
+                                                School of Mathematics and Statistics 數學與統計學院
+                                            </p>
+                                            <div
+                                                class="text-muted post-item-foot post-item-foot-icon text-ellipsis list-inline">
+                                                <li>
+                                                    <span class="m-r-sm right-small-icons">
+                                                        <i data-feather="user"></i>
+                                                    </span>Supervised by Prof. Mingwei Li and Dr. Yushan Jiang
+                                                </li><br>
+                                                <li>
+                                                    <span class="right-small-icons m-r-sm">
+                                                        <i data-feather="clock"></i>
+                                                    </span>
+                                                    Sep 2019 to Jun 2023
+                                                </li>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- 发表 Publications -->
+
+                        <div>
+                            <div>
+                                <div id="post-content" class="wrapper-sm">
+                                    <script>LocalConst.POST_MATHJAX = ""
+                                        LocalConst.EDITOR_CHOICE = "origin"
+                                    </script>
+
+                                    <div class="entry-content l-h-2x" id="md_handsome_origin">
+                                        <h2 id="Publications" style="margin-top: 100vh;">Publications</h2>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div>
+                                    <div>
+
+                                        <div class="single-post panel panel-large box-shadow-wrap-normal">
+                                            <div class="index-post-img">
+                                                <a href="https://arxiv.org/abs/2502.15806" target="_blank">
+                                                    <div class="item-thumb lazy" style="background-image: url(./figures/cover_mousetrap.png); width: 100%; padding-top: 37.5%; 
+                                    background-repeat: no-repeat; background-position: center;background-size: cover;">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="post-meta wrapper-lg padder-v">
+                                                <div class="post_title_wrapper">
+                                                    <h2 class="m-t-xs index-post-title text-title">
+
+                                                        [ACL 2025 Findings] A
+                                                        Mousetrap: Fooling Large Reasoning Models for Jailbreak with
+                                                        Chain of
+                                                        Iterative Chaos
+                                                    </h2>
+                                                </div>
+                                                <p style="text-align: justify;"><span
+                                                        class="m-r-sm right-small-icons"><i
+                                                            data-feather="user"></i></span><b>Yang Yao</b>, Xuan Tong,
+                                                    Ruofan
+                                                    Wang, Yixu
+                                                    Wang, Lujundong Li, Liang Liu, Yan Teng, Yingchun Wang</p>
+                                                <p style="text-align: justify;"><span
+                                                        class="right-small-icons m-r-sm"><i
+                                                            data-feather="message-square"></i></span>Findings of the
+                                                    Association
+                                                    for
+                                                    Computational Linguistics: ACL 2025</p>
+                                            </div><!--text-muted-->
+                                        </div><!--panel/panel-small-->
+                                    </div>
+
+
+
+
+                                    <div>
+                                        <div class="single-post panel panel-large box-shadow-wrap-normal">
+                                            <div class="index-post-img">
+                                                <div class="item-thumb lazy" style="background-image: url(./figures/cover_argus.png); width: 100%; padding-top: 37.5%; 
+                                background-repeat: no-repeat; background-position: center;background-size: cover;">
+                                                </div>
+                                            </div>
+                                            <div class="post-meta wrapper-lg padder-v">
+                                                <div class="post_title_wrapper">
+                                                    <h2 class="m-t-xs index-post-title text-title">
+
+                                                        [Under Review] Argus Inspection: Do Multimodal Large Language
+                                                        Models
+                                                        Possess the
+                                                        Eye of Panoptes?
+                                                    </h2>
+                                                </div>
+                                                <p style="text-align: justify;"><span
+                                                        class="m-r-sm right-small-icons"><i
+                                                            data-feather="user"></i></span><b>Yang Yao</b>, Lingyu Li,
+                                                    Jiaxin
+                                                    Song,
+                                                    Chiyu Chen, Zhenqi He, Yixu Wang, Xin Wang, Tianle Gu, Jie Li, Yan
+                                                    Teng,
+                                                    Yingchun
+                                                    Wang</p>
+                                                <p style="text-align: justify;"><span
+                                                        class="right-small-icons m-r-sm"><i
+                                                            data-feather="message-square"></i></span>arXiv Preprint 2025
+                                                </p>
+                                            </div><!--text-muted-->
+                                        </div><!--panel/panel-small-->
+                                    </div>
+
+
+
+
+                                    <div>
+                                        <div class="single-post panel-small box-shadow-wrap-normal">
+                                            <div class="post-meta wrapper-lg padder-v">
+                                                <div class="post_title_wrapper">
+                                                    <h2 class="m-t-xs index-post-title text-title">
+                                                        [Under Review] Paint Your Prompt: From Sequential Text to
+                                                        Structured
+                                                        Blueprints
+                                                        for Enhanced Image Synthesis
+                                                    </h2>
+                                                </div>
+                                                <p style="text-align: justify;"><span
+                                                        class="m-r-sm right-small-icons"><i
+                                                            data-feather="user"></i></span>Lujundong Li, Dazhong Shen,
+                                                    Zhonggai
+                                                    Wang,
+                                                    <b>Yang Yao</b>, Kun Qian, Guanglu Song, Ying Sun
+                                                </p>
+                                                <p style="text-align: justify;"><span
+                                                        class="right-small-icons m-r-sm"><i
+                                                            data-feather="message-square"></i></span>arXiv Preprint 2025
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div>
+                                        <div class="panel-small single-post box-shadow-wrap-normal">
+                                            <div class="index-post-img-small post-feature index-img-small">
+                                                <a href="https://arxiv.org/abs/2505.11926" target="_blank">
+                                                    <div class="item-thumb-small lazy"
+                                                        style="width: 100%; padding-top: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
+                                                        <img src="./figures/cover_safevid.png" class="post-pic lazy"
+                                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="post-meta wrapper-lg padder-v"
+                                                style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                                                <div class="post_title_wrapper">
+                                                    <h2 class="m-t-xs index-post-title text-title">
+                                                        [Under Review] SafeVid: Toward Safety Aligned Video Large
+                                                        Multimodal
+                                                        Models</h2>
+                                                </div>
+                                                <p style="text-align: justify;"><span
+                                                        class="m-r-sm right-small-icons"><i
+                                                            data-feather="user"></i></span>Yixu Wang, Jiaxin Song,
+                                                    Yifeng Gao,
+                                                    Xin Wang,
+                                                    <b>Yang Yao</b>, Yan Teng, Xingjun Ma, Yingchun Wang, Yu-Gang Jiang
+                                                </p>
+                                                <p style="text-align: justify;"><span
+                                                        class="right-small-icons m-r-sm"><i
+                                                            data-feather="message-square"></i></span>arXiv Preprint 2025
+                                                </p>
+                                            </div><!--text-muted-->
+                                        </div><!--panel/panel-small-->
+                                    </div>
+
+
+
+
+                                    <div>
+                                        <div class="single-post panel-small box-shadow-wrap-normal">
+                                            <div class="post-meta wrapper-lg padder-v">
+                                                <div class="post_title_wrapper">
+                                                    <h2 class="m-t-xs index-post-title text-title">
+                                                        [Under Review] CADiff: Context-Aware Diffusion for Controllable
+                                                        Anomaly
+                                                        Generation in Anomaly Detection
+                                                    </h2>
+                                                </div>
+                                                <p style="text-align: justify;"><span
+                                                        class="m-r-sm right-small-icons"><i
+                                                            data-feather="user"></i></span>Xuan Tong, Yuxuan Lin,
+                                                    Junxiong Lin,
+                                                    Xinji
+                                                    Mai, Haoran Wang, Zeng Tao, <b>Yang Yao</b>, Ruofan Wang, Yan Wang,
+                                                    Wenqiang
+                                                    Zhang
+                                                </p>
+                                                <p style="text-align: justify;"><span
+                                                        class="right-small-icons m-r-sm"><i
+                                                            data-feather="message-square"></i></span>arXiv Preprint 2025
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- 实习 Internship -->
+
+                        <div>
+                            <div id="post-content" class="wrapper-sm">
+                                <script>LocalConst.POST_MATHJAX = ""
+                                    LocalConst.EDITOR_CHOICE = "origin"
+                                </script>
+
+                                <div class="entry-content l-h-2x" id="md_handsome_origin">
+                                    <h2 id="Internship" style="margin-top: 100vh;">Internship</h2>
+                                </div>
+                            </div>
+
+
+
+                            <div class="panel-small single-post box-shadow-wrap-normal">
+                                <a href="https://www.shlab.org.cn/" target="_blank">
+                                    <div class="index-post-img-small post-feature index-img-small">
+                                        <div
+                                            style="display: flex; justify-content: center; align-items: center; height:28vh;">
+                                            <img src="./figures/institution_ailab.png"
+                                                style="width: 83%; height: auto;">
+                                        </div>
+                                </a>
+                            </div>
+                            <div class="post-meta wrapper-lg padder-v">
+                                <div class="post_title_wrapper">
+                                    <h2 class="m-t-xs text-ellipsis index-post-title text-title">
+                                        <a href="https://www.shlab.org.cn/" target="_blank">Shanghai Artificial
+                                            Intelligence
+                                            Laboratory<br>上海人工智能實驗室</a>
+                                    </h2>
+                                </div>
+
+                                <p style="margin-top: 2px; line-height: 1.4;">Large Model Safety Algorithm Intern
+                                    大模型安全算法實習生<br>
+                                    Safety and Trustworthy AI Center, Research Department
+                                </p>
+                                <div class="text-muted post-item-foot post-item-foot-icon text-ellipsis list-inline">
+                                    <li>
+                                        <span class="m-r-sm right-small-icons">
+                                            <i data-feather="user"></i>
+                                        </span>Supervised by Prof. Yingchun Wang and Dr. Yan Teng
+                                    </li><br>
+                                    <li>
+                                        <span class="right-small-icons m-r-sm">
+                                            <i data-feather="clock"></i>
+                                        </span>
+                                        Nov 2024 to Present
+                                    </li>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                    <!-- 服务 Service -->
+                    <div>
+
+                        <div id="post-content" class="wrapper-sm">
+                            <script>LocalConst.POST_MATHJAX = ""
+                                LocalConst.EDITOR_CHOICE = "origin"
+                            </script>
+
+                            <div class="entry-content l-h-2x" id="md_handsome_origin">
+                                <h2 id="Service" style="margin-top: 100vh;">Service</h2>
+                            </div>
+                        </div>
+
+
+
+                        <div class="panel-small single-post box-shadow-wrap-normal">
+                            <a href="https://acmmm2025.org/" target="_blank">
+                                <div class="index-post-img-small post-feature index-img-small">
+                                    <div
+                                        style="display: flex; justify-content: center; align-items: center; height:28vh;">
+                                        <img src="./figures/conference_acmmm2025.png" style="width: 80%; height: auto;">
+                                    </div>
+                            </a>
+                        </div>
+                        <div class="post-meta wrapper-lg padder-v">
+                            <div class="post_title_wrapper">
+                                <h2 class="m-t-xs text-ellipsis index-post-title text-title">
+                                    <a href="https://acmmm2025.org/" target="_blank">ACM Multimedia 2025 Reviewer</a>
+                                </h2>
+                            </div>
+
+                            <p style="margin-top: 2px; line-height: 1.4;">The 33rd ACM International Conference on
+                                Multimedia<br>
+                                Dataset Track
+                            </p>
+                            <div class="text-muted post-item-foot post-item-foot-icon text-ellipsis list-inline">
+
+                                <li>
+                                    <span class="right-small-icons m-r-sm">
+                                        <i data-feather="clock"></i>
+                                    </span>
+                                    Oct 2025
+                                </li><br>
+
+
+                                <li>
+                                    <span class="m-r-sm right-small-icons">
+                                        <i data-feather="map-pin"></i>
+                                    </span>Dublin, Ireland
+                                </li>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div> <!--分页首页按钮-->
+        <nav class="text-center m-t-sm m-b-sm" role="navigation">
+        </nav>
+        <style>
+            .page-navigator>li>a,
+            .page-navigator>li>span {
+                line-height: 1.42857143;
+                padding: 6px 12px;
+            }
+        </style>
+    </div>
+
+    </div>
+    <!--首页右侧栏-->
+    <aside id="rightAside" class="asideBar col w-md bg-white-only bg-auto no-border-xs" role="complementary">
+        <div id="sidebar">
+
+            </section>
+            <!--联系方式-->
+            <section id="blog_info" class="widget widget_categories wrapper-md clear" style="margin-top: 13px;">
+                <h5 class="widget-title m-t-none text-md" style="margin-bottom: 20px;">Contact Info</h5>
+
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -10px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="mail"></i></span>
+                        <a href="mailto:yaoyangacademia@outlook.com">Email Address</a>
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">
+                                yaoyangacademia@outlook.com<br>yeungyiu@connect.hku.hk</p>
+                        </i>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="archive"></i></span>
+                        <a href="https://scholar.google.com/citations?user=a8-jrAoAAAAJ&hl=en" target="_blank">Google
+                            Scholar</a>
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">YANG YAO's Profile</p>
+                        </i>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="github"></i></span>
+                        <a href="https://github.com/evigbyen" target="_blank">GitHub</a>
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">EVIGBYEN # YAO YANG</p>
+                        </i>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="message-circle"></i></span>
+                        WeChat
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">DontShakeSheep 不搖羊</p>
+                        </i>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="slack"></i></span>
+                        Slack
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">yeungyiu@connect.hku.hk
+                            </p>
+                        </i>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
+                                data-feather="x"></i></span>
+                        X
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently Unavailable</p>
+                        </i>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
+                                data-feather="youtube"></i></span>
+                        YouTube
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently Unavailable</p>
+                        </i>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="linkedin"></i></span>
+                        LinkedIn
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently Unavailable</p>
+                        </i>
+                    </li>
+                </ul>
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
+                                data-feather="facebook"></i></span>
+                        FaceBook
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently Unavailable</p>
+                        </i>
+                    </li>
+                </ul>
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
+                                data-feather="gitlab"></i></span>
+                        GitLab
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently Unavailable</p>
+                        </i>
+                    </li>
+                </ul>
+
+                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
+                                data-feather="instagram"></i></span>
+                        Instagram
+                        <i>
+                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently Unavailable</p>
+                        </i>
+                    </li>
+
+                </ul>
+            </section>
+
+
+
+
+
+            <!--发表信息-->
+            <section id="blog_info" class="widget widget_categories wrapper-md clear" style="margin-top: -10px;">
+                <h5 class="widget-title m-t-none text-md">Pub Sum</h5>
+                <ul class="list-group box-wrap-normal">
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="feather"></i></span><span class="badge pull-right">5</span>Paper Num</li>
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="flag"></i></span><span class="badge pull-right">1</span>Accepted</li>
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="loader"></i></span><span class="badge pull-right">4</span>Under Review
+                    </li>
+                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
+                                data-feather="hash"></i></span><span class="badge pull-right">2</span>First Author</li>
+                </ul>
+            </section>
+
+
+
+
+            <!--备忘录-->
+
+            <section id="a_d_sidebar" class="widget widget_categories wrapper-md clear" style="margin-top: -15px;">
+                <h5 class="widget-title m-t-none text-md" style="margin-bottom: 20px;">Memo</h5>
+
+                <style>
+                    .a_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .a_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: justify;
+                        background-color: rgba(79, 0, 9, 0.7);
+                    }
+
+                    .b_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .b_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: justify;
+                        background-color: rgba(0, 49, 83, 0.7);
+                    }
+
+                    .c_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .c_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                        background-color: rgba(128, 0, 32, 0.7);
+                    }
+
+                    .d_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .d_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                        background-color: rgba(0, 149, 182, 0.7);
+                    }
+
+                    .e_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .e_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                        background-color: rgba(143, 75, 40, 0.7);
+                    }
+
+                    .f_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .f_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                        background-color: rgba(26, 85, 153, 0.7);
+                    }
+
+                    .g_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .g_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                        background-color: rgba(176, 89, 35, 0.7);
+                    }
+
+                    .h_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .h_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                        background-color: #81D8D0;
+                    }
+
+                    #t_d {
+                        color: #C2C4C3;
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+
+                    #s_d {
+                        color: #C2C4C3;
+                        font-size: 14px;
+                    }
+
+                    .trans_box {
+                        border: none;
+                        border-radius: 15px;
+                    }
+
+                    .trans_box {
+                        padding: 10px 14px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                        background-color: rgba(255, 255, 255, 0.3);
+                    }
+
+                    #t_d {
+                        color: #FFFFFF;
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+
+                    #s_d {
+                        color: #E3E3E3;
+                        font-size: 14px;
+                    }
+                </style>
+
+
+
+
+                <div class="a_box">
+                    <h5>
+                        <font color=#FFFFFF size=3>The 214th University Congregation, Faculty of Science
+                        </font>
+                    </h5>
+                    <h5>
+                        <font color=#E3E3E3>Jul 23, 2025<br>The University of Hong Kong</font>
+                    </h5>
+                </div>
+
+
+
+                <div class="b_box">
+                    <h5>
+                        <font color=#FFFFFF size=3><a href="https://2025.aclweb.org/" target="_blank">The 63rd Annual
+                                Meeting of the Association for Computational Linguistics</a>
+                        </font>
+                    </h5>
+                    <h5>
+                        <font color=#E3E3E3>Jul 27 to Aug 1, 2025<br>Vienna, Austria</font>
+                    </h5>
+                </div>
+
+
+
+
+                <!--
+
+<div class="a_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+<div class="b_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+<div class="c_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+<div class="d_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+<div class="e_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+<div class="f_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+<div class="g_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+<div class="h_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+<div class="trans_box">
+	<h4><font color=#C2C4C3>Test</font></h4>
+</div>
+
+
+
+
+
+<div class="d_box">
+        <h4><font color=#C2C4C3>ARIN 7404 Final Exam</font></h4>
+        <h5><font color=#C2C4C3>Electronic Calculators<br>18:30 - 20:30, December 18, 2023<br>CPD-LG.07-10, Centennial Campus</font></h5>
+</div>
+
+
+-->
+
+
+
+
+
+
+
+            </section>
+            <!--其他-->
+            <section id="tag_cloud-2" class="widget widget_tag_cloud wrapper-md clear">
+                <h5 class="widget-title m-t-none text-md">Motto</h5>
+                <div class="tags l-h-2x">
+
+                    <div class="trans_box">
+                        <h5>
+                            <font color=#FFFFFF>我不知道。<br>I have no idea.</font>
+                        </h5>
+                    </div>
+
+
+                </div>
+            </section>
+
+
+
+
+
+
+        </div>
+    </aside>
+    </div>
+    </main>
+    <!-- footer -->
+    </div><!-- /content -->
+
+    <!--right panel-->
+    <style>
+        .topButton>.btn {
+            top: 0;
+        }
+    </style>
+    <div class="topButton panel panel-default">
+        <button id="goToTop" class=" btn btn-default rightSettingBtn  pos-abt hide
+          border-radius-half-left" data-toggle="tooltip" data-placement="left" data-original-title="Top">
+            <span class="settings-icon2"><i width="13px" height="13px" data-feather="corner-right-up"></i></span>
+            <!--              <i class="fontello fontello-chevron-circle-up" aria-hidden="true"></i>-->
+        </button>
+    </div>
+
+    <footer id="footer" class="app-footer" role="footer">
+        <div class="padder-sm bg-white footer_wrapper box-shadow-wrap-normal b-normal">
+            <span class="text-ellipsis">&copy;&nbsp;2025 All rights reserved.
+            </span>
+        </div>
+    </footer>
+
+
+
+    </div><!--end of .app app-header-fixed-->
+
+
+
+
+
+
+    <!--定义全局变量-->
+
+    <style>
+        #mode_set {
+            display: none;
+        }
+    </style>
+
+    <!--主题核心js-->
+
+
+
+
+
+    <script src="./configurations/function.min.js?v=9.2.120230801501"></script>
+
+    <script src="./configurations/core.min.js?v=9.2.120230801501"></script>
+
+
+
+
+
+    <!--主题组件js加载-->
+    <script src="./configurations/jquery.pjax.min.js" type="text/javascript"></script>
+
+    <!--平滑滚动组件-->
+    <script src="./configurations/SmoothScroll.min.js"></script>
+
+    <!--主题组件js加载结束-->
+
+
+
+
+    <!--用户自定义js-->
+    <script type="text/javascript">
+        try {
+            /* Copy success message */
+            kaygb_copy(); function kaygb_copy() {
+                $(document).ready(function () { $("body").bind('copy', function (e) { hellolayer() }) }); var sitesurl = window.location.href; function hellolayer() {
+                    $.message({
+                        message: "© EvigByen. All Rights Reserved. ",
+                        title: "Copied Successfully",
+                        type: "success",
+                        autoHide: !1,
+                        time: "3000"
+                    })
+                }
+            }
+            /* Copy success message */
+        } catch (e) {
+            handsome_util.settingError("自定义js");
+            console.error(e);
+        }
+    </script>
+
+
+</body>
+
+</html><!--html end-->
+<!-- / footer -->
