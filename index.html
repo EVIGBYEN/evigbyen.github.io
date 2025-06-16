@@ -433,7 +433,7 @@
                         <div ui-nav>
                             <a href="https://evigbyen.github.io/">
                                 <span class="thumb-lg w-auto-folded avatar m-t-sm">
-                                    <img src="./figures/profile_idphoto.png" class="img-full img-circle"
+                                    <img src="./figures/profile_life.png" class="img-full img-circle"
                                         style="margin-top: 10px;">
                                 </span>
                             </a>
@@ -809,7 +809,7 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>arXiv Preprint 2025
+                                                            data-feather="message-square"></i></span>Under Review and Preprint Not Released
                                                 </p>
                                             </div>
                                         </div>
@@ -876,7 +876,7 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>arXiv Preprint 2025
+                                                            data-feather="message-square"></i></span>Under Review and Preprint Not Released
                                                 </p>
                                             </div>
                                         </div>
@@ -1355,15 +1355,41 @@
                         background-color: rgba(255, 255, 255, 0.3);
                     }
 
-                    #t_d {
+                    
+                    #t_day {
                         color: #FFFFFF;
-                        font-size: 14px;
-                        font-weight: normal;
+                        font-weight: bold;
                     }
 
-                    #s_d {
-                        color: #E3E3E3;
-                        font-size: 14px;
+                    #s_day {
+                        color: #FFFFFF;
+                    }
+                    
+                    #t_hour {
+                        color: #FFFFFF;
+                        font-weight: bold;
+                    }
+
+                    #s_hour {
+                        color: #FFFFFF;
+                    }
+
+                    #t_min {
+                        color: #FFFFFF;
+                        font-weight: bold;
+                    }
+
+                    #s_min {
+                        color: #FFFFFF;
+                    }
+
+                    #t_sec {
+                        color: #FFFFFF;
+                        font-weight: bold;
+                    }
+
+                    #s_sec {
+                        color: #FFFFFF;
                     }
                 </style>
 
@@ -1391,6 +1417,50 @@
                     <h5>
                         <font color=#E3E3E3>Jul 27 to Aug 1, 2025<br>Vienna, Austria</font>
                     </h5>
+                </div>
+
+
+
+                <div class="c_box">
+                    <h5>
+                        <font color=#FFFFFF size=3>The 40th Annual AAAI Conference on Artificial Intelligence Submission Deadline
+                        </font>
+                    </h5>
+                    <h5>
+                        <font color=#FFFFFF>Aug 1, 2025 (UTC-12)</font>
+                    
+                        <div id="CountMsg" class="HotDate">
+                            <span id="t_day"> </span>
+                            <span id="s_day"> d&nbsp;</span>
+                            <span id="t_hour"> </span>
+                            <span id="s_hour"> h&nbsp;</span>
+                            <span id="t_min"> </span>
+                            <span id="s_min"> m&nbsp;</span>
+                            <span id="t_sec"> </span>
+                            <span id="s_sec"> s&nbsp;</span>
+                        </div>
+                    </h5>
+
+
+                    <script type="text/javascript">
+                        function getRTime() {
+                            var EndTime = Date.UTC(2025, 7, 2, 11, 59, 0); // UTC−12 的时间等于UTC时间加12小时
+                            var Now = new Date();
+                            var NowTime = Now.getTime() + (Now.getTimezoneOffset() * 60000);
+                            var t = EndTime - NowTime;
+
+                            var d = Math.floor(t / 1000 / 60 / 60 / 24);
+                            var h = Math.floor(t / 1000 / 60 / 60 % 24);
+                            var m = Math.floor(t / 1000 / 60 % 60);
+                            var s = Math.floor(t / 1000 % 60);
+
+                            document.getElementById("t_day").innerHTML = d;
+                            document.getElementById("t_hour").innerHTML = h;
+                            document.getElementById("t_min").innerHTML = m;
+                            document.getElementById("t_sec").innerHTML = s;
+                        }
+                        setInterval(getRTime, 1000);
+                    </script>
                 </div>
 
 
@@ -1437,6 +1507,10 @@
 
 
 -->
+
+
+
+
 
 
 
