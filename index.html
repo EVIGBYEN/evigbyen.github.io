@@ -915,8 +915,7 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>Under Review and
-                                                    Preprint Not Released
+                                                            data-feather="message-square"></i></span>Preprint Not Released
                                                 </p>
                                             </div>
                                         </div>
@@ -979,8 +978,7 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>Under Review and
-                                                    Preprint Not Released
+                                                            data-feather="message-square"></i></span>Preprint Not Released
                                                 </p>
                                             </div>
                                         </div>
@@ -1618,6 +1616,9 @@
                         <font color=#FFFFFF size=3>The 14th International Conference on Learning Representations Submission Deadline
                         </font>
                     </h5>
+                    <p style="font-size:12px;"><i>
+                    Abs DDL on Sep 20, 2025
+                    </i></p>
                     <h5>
                         <font color=#FFFFFF>Sep 25, 2025 (UTC-0)</font>
 
@@ -1633,23 +1634,23 @@
                         </div>
                     </h5>
 
-
                     <script type="text/javascript">
                         function getRTime() {
-                            var EndTime = Date.UTC(2025, 8, 25, 11, 59, 0);
-                            var Now = new Date();
-                            var NowTime = Now.getTime() + (Now.getTimezoneOffset() * 60000);
-                            var t = EndTime - NowTime;
-
-                            var d = Math.floor(t / 1000 / 60 / 60 / 24);
-                            var h = Math.floor(t / 1000 / 60 / 60 % 24);
-                            var m = Math.floor(t / 1000 / 60 % 60);
-                            var s = Math.floor(t / 1000 % 60);
-
-                            document.getElementById("t_day_2").innerHTML = d;
-                            document.getElementById("t_hour_2").innerHTML = h;
-                            document.getElementById("t_min_2").innerHTML = m;
-                            document.getElementById("t_sec_2").innerHTML = s;
+                            var EndTime = new Date('2025/09/25 19:59:59');
+                            var NowTime = new Date();
+                            var t = EndTime.getTime() - NowTime.getTime();
+                            var d = Math.floor(t/1000/60/60/24); 
+                            var h = Math.floor(t/1000/60/60%24);
+                            var m = Math.floor(t/1000/60%60);
+                            var s = Math.floor(t/1000%60);
+                            var day = document.getElementById("t_day_2");
+                            if (day != null) {day.innerHTML = d;}
+                            var hour = document.getElementById("t_hour_2");
+                            if (hour != null) {hour.innerHTML = h;}
+                            var min = document.getElementById("t_min_2");
+                            if (min != null) {min.innerHTML = m;}
+                            var sec = document.getElementById("t_sec_2");
+                            if (sec != null) {sec.innerHTML = s;}
                         }
                         setInterval(getRTime, 1000);
                     </script>
