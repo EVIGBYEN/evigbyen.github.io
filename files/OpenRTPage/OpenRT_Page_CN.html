@@ -921,27 +921,6 @@
     </p>
 
     <div class="card" style="position: relative;">
-      <button class="copy-btn" onclick="
-      const bib = document.getElementById('bibtex-content').innerText;
-      navigator.clipboard.writeText(bib).then(() => {
-        this.textContent = 'Copied';
-        setTimeout(() => this.textContent = 'Copy', 1600);
-      });
-    " style="
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: linear-gradient(180deg, #1a1d29, #151823);
-      border: 1px solid #2a2f45;
-      color: #e6e6ea;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-family: 'Outfit', sans-serif;
-    ">复制</button>
-
       <pre id="bibtex-content"><code>python eval.py \
     --attacker-model deepseek-v3.2 \
     --judge-model gpt-4o-mini \
@@ -962,9 +941,10 @@
   <section id="experiments">
     <h2>实验</h2>
 
-    <div class="figure-card" style="text-align:center; margin-top:50px; margin-bottom:50px; "> <img
-        src="materials/fig_main_cn.png" alt="Main experiment figure"
-        style="max-width:90%; height:auto; display:inline-block;"> </div>
+    <div class="table-card" style="text-align:center; ">
+      <img src="materials/fig_main_cn.png" alt="Main experiment figure"
+        style="max-width:90%; height:auto; display:inline-block;">
+    </div>
 
     <!-- Attack Performance across Different MLLMs -->
     <div class="table-card">
@@ -1816,8 +1796,8 @@
       <button class="copy-btn" onclick="
       const bib = document.getElementById('bibtex-content').innerText;
       navigator.clipboard.writeText(bib).then(() => {
-        this.textContent = 'Copied';
-        setTimeout(() => this.textContent = 'Copy', 1600);
+        this.textContent = '已复制';
+        setTimeout(() => this.textContent = '复制', 1600);
       });
     " style="
       position: absolute;

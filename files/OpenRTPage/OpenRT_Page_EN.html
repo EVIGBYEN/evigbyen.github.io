@@ -935,26 +935,6 @@
 
 
     <div class="card" style="position: relative;">
-      <button class="copy-btn" onclick="
-      const bib = document.getElementById('bibtex-content').innerText;
-      navigator.clipboard.writeText(bib).then(() => {
-        this.textContent = 'Copied';
-        setTimeout(() => this.textContent = 'Copy', 1600);
-      });
-    " style="
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: linear-gradient(180deg, #1a1d29, #151823);
-      border: 1px solid #2a2f45;
-      color: #e6e6ea;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-family: 'Outfit', sans-serif;
-    ">Copy</button>
 
       <pre id="bibtex-content"><code>python eval.py \
     --attacker-model deepseek-v3.2 \
