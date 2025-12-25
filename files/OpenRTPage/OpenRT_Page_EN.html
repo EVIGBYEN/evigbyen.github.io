@@ -241,6 +241,16 @@
     }
 
 
+    video::-webkit-media-controls-mute-button,
+    video::-webkit-media-controls-volume-slider {
+      display: none !important;
+    }
+
+    video::-moz-media-controls-mute-button,
+    video::-moz-media-controls-volume-slider {
+      display: none !important;
+    }
+
 
     .table-card {
       background: #151823;
@@ -469,7 +479,7 @@
         <a href="#contact" class="nav-link">Contact</a>
         <a href="https://github.com/AI45Lab/OpenRT" target="_blank" class="nav-link">GitHub</a>
         <span class="lang-switch">
-          <a href="OpenRT_Page_EN.html">EN</a>
+          EN
           <span class="lang-divider" style="color:#555555;">|</span>
           <a href="OpenRT_Page_CN.html" class="lang-muted" style="color:#555555;">中</a>
         </span>
@@ -914,11 +924,8 @@
 
   <section id="demo">
     <h2>Demo</h2>
-    TBD @Yunhao Chen @Juncheng Li
-    <div class="video-card" style="margin-top:50px; text-align:center;">
-      <video src="materials/demo_en.mp4" autoplay muted loop controls
-        style="width:50%; height:auto; border-radius:15px;">
-
+    <div class="video-card" style="margin-top:50px; text-align:center; margin-bottom: 25px;">
+      <video src="materials/demo.mov" autoplay muted loop style="width:55%; height:auto; border-radius:15px;">
       </video>
     </div>
 
@@ -945,13 +952,13 @@
     ">Copy</button>
 
       <pre id="bibtex-content"><code>python eval.py \
-    --attacker-model gpt-4o \
+    --attacker-model deepseek-v3.2 \
     --judge-model gpt-4o-mini \
-    --target-models gpt-5 gpt-5.1 gpt-5.2 claude-4.5-sonnet \
-    --attacks AutoDANTurboR JOOD \
+    --target-models gpt-5.2 \
+    --attacks all \
     --dataset harmbench \
-    --max-workers 40 \
-    --results-dir results/experiment
+    --max-workers 50 \
+    --results-dir results/demo
 </code></pre>
     </div>
 
@@ -964,9 +971,10 @@
   <section id="experiments">
     <h2>Experiments</h2>
 
-    <div class="figure-card" style="text-align:center; margin-top:50px; margin-bottom:50px; "> <img
-        src="materials/fig_main_en.png" alt="Main experiment figure"
-        style="max-width:90%; height:auto; display:inline-block;"> </div>
+    <div class="table-card" style="text-align:center; ">
+      <img src="materials/fig_main_en.png" alt="Main experiment figure"
+        style="max-width:90%; height:auto; display:inline-block;">
+    </div>
 
     <!-- Attack Performance across Different MLLMs -->
     <div class="table-card">
@@ -1855,7 +1863,7 @@
       <div class="card">
         <h3>Authors</h3>
         <p><a href="https://xinwong.github.io/" target="_blank" rel="noopener">Xin Wang</a>*
-          , Yunhao Chen*, Juncheng Li*, Yixu Wang, <a href="https://evigbyen.github.io/" target="_blank">Yang Yao</a>
+          , Yunhao Chen*, Juncheng Li*, Yixu Wang, Yang Yao
           , Jie Li, <a href="https://tengyan666.github.io/" target="_blank">Yan Teng</a>†, Yingchun Wang, <a
             href="https://cs.rice.edu/~xh37/index.html" target="_blank">Xia Hu</a></p>
         <p class="affil"><i>Affiliation:

@@ -241,6 +241,15 @@
     }
 
 
+    video::-webkit-media-controls-mute-button,
+    video::-webkit-media-controls-volume-slider {
+      display: none !important;
+    }
+
+    video::-moz-media-controls-mute-button,
+    video::-moz-media-controls-volume-slider {
+      display: none !important;
+    }
 
     .table-card {
       background: #151823;
@@ -471,7 +480,7 @@
         <span class="lang-switch">
           <a href="OpenRT_Page_EN.html" class="lang-muted" style="color:#555555;">EN</a>
           <span class="lang-divider" style="color:#555555;">|</span>
-          <a href="OpenRT_Page_CN.html">中</a>
+          中
         </span>
       </div>
     </nav>
@@ -902,13 +911,11 @@
 
   <section id="demo">
     <h2>演示</h2>
-    待完成 @陈云豪 @黎俊成
-
-    <div class="video-card" style="margin-top:50px; text-align:center;">
-      <video src="materials/demo_en.mp4" autoplay muted loop controls
-        style="width:50%; height:auto; border-radius:15px;">
+    <div class="video-card" style="margin-top:50px; text-align:center; margin-bottom: 25px;">
+      <video src="materials/demo.mov" autoplay muted loop style="width:55%; height:auto; border-radius:15px;">
       </video>
     </div>
+
 
     <div class="card" style="position: relative;">
       <button class="copy-btn" onclick="
@@ -933,13 +940,13 @@
     ">复制</button>
 
       <pre id="bibtex-content"><code>python eval.py \
-    --attacker-model gpt-4o \
+    --attacker-model deepseek-v3.2 \
     --judge-model gpt-4o-mini \
-    --target-models gpt-5 gpt-5.1 gpt-5.2 claude-4.5-sonnet \
-    --attacks AutoDANTurboR JOOD \
+    --target-models gpt-5.2 \
+    --attacks all \
     --dataset harmbench \
-    --max-workers 40 \
-    --results-dir results/experiment
+    --max-workers 50 \
+    --results-dir results/demo
 </code></pre>
     </div>
 
@@ -1845,8 +1852,7 @@
         <h3>作者</h3>
         <p>
           <a href="https://xinwong.github.io/" target="_blank" rel="noopener">王欣</a><sup>*</sup>,
-          陈云豪<sup>*</sup>, 黎俊成<sup>*</sup>, 王熠旭,
-          <a href="https://evigbyen.github.io/" target="_blank">姚洋</a>, 李杰,
+          陈云豪<sup>*</sup>, 黎俊成<sup>*</sup>, 王熠旭, 姚洋, 李杰,
           <a href="https://tengyan666.github.io/" target="_blank">滕妍</a><sup>†</sup>,
           王迎春,
           <a href="https://cs.rice.edu/~xh37/index.html" target="_blank">胡侠</a>
