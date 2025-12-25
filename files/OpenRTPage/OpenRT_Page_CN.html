@@ -932,16 +932,14 @@
       font-family: 'Outfit', sans-serif;
     ">复制</button>
 
-      <pre id="bibtex-content"><code>
-        
-        @article{OpenRT2025,
-        title={OpenRT: An Open-Source Red Teaming Framework for Large Language Models and Vision-Language Models},
-        author={Shanghai AI Lab},
-        journal={arXiv preprint},
-        year={2025}
-      }
-
-
+      <pre id="bibtex-content"><code>python eval.py \
+    --attacker-model gpt-4o \
+    --judge-model gpt-4o-mini \
+    --target-models gpt-5 gpt-5.1 gpt-5.2 claude-4.5-sonnet \
+    --attacks AutoDANTurboR JOOD \
+    --dataset harmbench \
+    --max-workers 40 \
+    --results-dir results/experiment
 </code></pre>
     </div>
 
