@@ -1542,6 +1542,46 @@
                                 gap: 5px;
                             }
 
+
+                            /* Force each voyage card to stack image above text */
+                            .pastimes-card-grid > .panel-small {
+                                display: flex !important;
+                                flex-direction: column !important;
+                                align-items: stretch !important;
+                            }
+
+                            .pastimes-card-grid .index-post-img-small,
+                            .pastimes-card-grid .post-feature {
+                                float: none !important;
+                                width: 100% !important;
+                                max-width: 100% !important;
+                                display: block !important;
+                                flex: 0 0 auto !important;
+                            }
+
+                            .pastimes-card-grid .padder-v,
+                            .pastimes-card-grid .post-meta {
+                                margin-left: 0 !important;
+                                width: 100% !important;
+                                clear: both !important;
+                                overflow: visible !important;
+                                flex: 0 0 auto !important;
+                            }
+
+
+                            /* 方案B: force image above text on large screens */
+                            .pastimes-card-grid .post-feature {
+                                float: none !important;
+                                width: 100% !important;
+                                display: block !important;
+                            }
+
+                            .pastimes-card-grid .post-meta {
+                                overflow: visible !important;
+                                margin-left: 0 !important;
+                                clear: both;
+                            }
+
                             @media (max-width: 1200px) {
                                 .pastimes-card-grid {
                                     grid-template-columns: repeat(4, 1fr);
