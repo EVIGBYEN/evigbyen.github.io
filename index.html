@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html class="small-scroll-bar no-js bg cool-transparent" lang="en">
 
+<!-- [head] meta, assets, theme config -->
 <head>
     <script>
         var _hmt = _hmt || [];
@@ -39,7 +40,6 @@
         href="./configurations//index.php/feed/rss/" />
     <link rel="alternate" type="application/atom+xml" title="EvigByen &raquo; ATOM 1.0"
         href="./configurations/index.php/feed/atom/" />
-
 
 
     <script type="text/javascript">
@@ -132,7 +132,6 @@
 
     <link rel="stylesheet" href="./configurations/function.min.css?v=9.2.120230801501" type="text/css" />
     <link rel="stylesheet" href="./configurations/handsome.min.css?v=9.2.120230801501" type="text/css" />
-
 
 
     <!--主题组件css文件加载-->
@@ -267,7 +266,6 @@
         }
 
 
-
         /*头像旋转*/
         .img-circle {
             border-radius: 80%;
@@ -302,18 +300,35 @@
         }
     </style>
 
+
+    <!-- 加大主栏卡片圆角-->
+    <style id="card-radius-only">
+        :root {
+            --card-radius: 12px;
+        }
+        #post-panel .panel,
+        #post-panel .panel-small,
+        #post-panel .single-post {
+            border-radius: var(--card-radius) !important;
+        }
+        #post-panel > header.bg-light {
+            border-radius: var(--card-radius);
+        }
+    </style>
+
     <!--全站jquery-->
     <script src="./configurations/jquery.min.js"></script>
 
 
-
 </head>
 
+<!-- [body] page shell -->
 <body id="body" class="fix-padding skt-loading">
 
-
     <!-- aside -->
+    <!-- [layout] #alllayout: header + aside + content + rightAside + footer -->
 
+    <!-- [header] top navbar -->
     <div id="alllayout" class="app app-aside-fix no-container app-header-fixed "> <!-- headnav -->
         <header id="header" class="app-header navbar box-shadow-bottom-lg fix-padding" role="menu">
             <!-- navbar header（交集处） -->
@@ -436,7 +451,9 @@
             <!-- / navbar collapse -->
         </header>
         <!-- / headnav -->
+        <!-- [/header] -->
 
+        <!-- [aside] left sidebar navigation -->
         <!--选择侧边栏的颜色-->
         <aside id="aside" class="gpu-speed app-aside hidden-xs bg-light"> <!--<aside>-->
             <div class="aside-wrap" layout="column">
@@ -536,6 +553,9 @@
 
             </div><!--.aside-wrap-->
         </aside>
+        <!-- [/aside] -->
+
+        <!-- [content] main column + resize handle -->
         <!-- content -->
 
         <div id="content" class="app-content">
@@ -548,15 +568,11 @@
             </div>
 
 
-
-
-
-
-
             <!-- / aside -->
 
             <!-- <div id="content" class="app-content"> -->
 
+            <!-- [main] article sections -->
             <!-- 正文开始 -->
             <a class="off-screen-toggle hide"></a>
             <main class="app-content-body ">
@@ -565,14 +581,8 @@
 
                         <header class="bg-light lter wrapper-md">
                             <h1 style="line-height: 2.5;" class="m-n text-black l-h">YANG, YAO</h1>
-                            <span style="font-size: 18px;"><class="text-muted letterspacing
-                                    indexWords">小船今已遠航，我最憂鬱的朋友。</span>
+                            <span class="text-muted letterspacing indexWords" style="font-size: 18px; color: #fff">小船今已遠航，我最憂鬱的朋友。</span>
                         </header>
-
-
-
-
-
 
                         <!-- 介绍 Biography -->
                         <div id="post-content" class="wrapper-lg" style="margin-top: -10px;">
@@ -596,7 +606,6 @@
                                 </p>
                             </div>
                         </div>
-
 
 
                         <!-- 教育 Education -->
@@ -659,8 +668,6 @@
                                     </div>
 
 
-
-
                                     <div>
                                         <div class="panel-small single-post box-shadow-wrap-normal">
                                             <a href="https://www.neu.edu.cn/" target="_blank">
@@ -711,7 +718,6 @@
                         </div>
 
 
-
                         <!-- 发表 Publications -->
 
                         <div>
@@ -727,9 +733,6 @@
                                 </div>
 
 
-
-
-
                                 <div>
                                     <div>
 
@@ -737,7 +740,7 @@
                                             <div class="index-post-img">
                                                 <a href="https://aclanthology.org/2025.findings-acl.408/"
                                                     target="_blank">
-                                                    <div class="item-thumb lazy" style="background-image: url(./figures/cover_mousetrap.png); width: 100%; padding-top: 37.5%; 
+                                                    <div class="item-thumb lazy" style="background-image: url(./figures/cover_mousetrap.png); width: 100%; padding-top: 37.5%;
                                     background-repeat: no-repeat; background-position: center;background-size: cover;">
                                                     </div>
                                                 </a>
@@ -772,12 +775,11 @@
                                     </div>
 
 
-
                                     <div>
                                         <div class="single-post panel panel-large box-shadow-wrap-normal">
                                             <div class="index-post-img">
                                                 <a href="https://doi.org/10.1145/3746027.3758266" target="_blank">
-                                                    <div class="item-thumb lazy" style="background-image: url(./figures/cover_argus.png); width: 100%; padding-top: 37.5%; 
+                                                    <div class="item-thumb lazy" style="background-image: url(./figures/cover_argus.png); width: 100%; padding-top: 37.5%;
                                 background-repeat: no-repeat; background-position: center;background-size: cover;">
                                                     </div>
                                                 </a>
@@ -813,11 +815,10 @@
                                     </div>
 
 
-
                                     <div>
                                         <div class="panel-small single-post box-shadow-wrap-normal">
                                             <div class="index-post-img-small post-feature index-img-small">
-                                                <a href="https://ai45.shlab.org.cn/research/posts/safework-r1/"
+                                                <a href="https://arxiv.org/pdf/2507.18576"
                                                     target="_blank">
                                                     <div class="item-thumb-small lazy"
                                                         style="width: 100%; padding-top: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
@@ -843,20 +844,20 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>Intern Safework
-                                                    Technical Report 2025, Shanghai, China
+                                                            data-feather="message-square"></i></span>Intern Technical Report 2025, Shanghai, China <a
+                                                        href="https://ai45.shlab.org.cn/research/posts/safework-r1/"
+                                                        target="_blank">[#Resources]</a>
                                                 </p>
                                             </div><!--text-muted-->
                                         </div><!--panel/panel-small-->
                                     </div>
 
 
-
                                     <div>
                                         <div class="single-post panel panel-large box-shadow-wrap-normal">
                                             <div class="index-post-img">
                                                 <a href="https://arxiv.org/abs/2510.02190" target="_blank">
-                                                    <div class="item-thumb lazy" style="background-image: url(./figures/cover_drbench.png); width: 100%; padding-top: 37.5%; 
+                                                    <div class="item-thumb lazy" style="background-image: url(./figures/cover_drbench.png); width: 100%; padding-top: 37.5%;
                                 background-repeat: no-repeat; background-position: center;background-size: cover;">
                                                     </div>
                                                 </a>
@@ -885,11 +886,10 @@
                                     </div>
 
 
-
                                     <div>
                                         <div class="panel-small single-post box-shadow-wrap-normal">
                                             <div class="index-post-img-small post-feature index-img-small">
-                                                <a href="https://arxiv.org/abs/2507.15851" target="_blank">
+                                                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/40871" target="_blank">
                                                     <div class="item-thumb-small lazy"
                                                         style="width: 100%; padding-top: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
                                                         <img src="./figures/cover_othermind.png" class="post-pic lazy"
@@ -912,17 +912,15 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>AAAI 2026, Singapore
+                                                            data-feather="message-square"></i></span>AAAI 2026, Singapore <a
+                                                        href="https://lingyuli-cogs.github.io/poster/#:~:text=AAAI%202026%20The%20Other%20Mind"
+                                                        target="_blank">[#Poster]</a> <a
+                                                        href="https://theothermind.github.io/"
+                                                        target="_blank">[#Resources]</a>
                                                 </p>
                                             </div><!--text-muted-->
                                         </div><!--panel/panel-small-->
                                     </div>
-
-
-
-
-
-
 
 
                                     <div>
@@ -954,11 +952,9 @@
                                                         class="right-small-icons m-r-sm"><i
                                                             data-feather="message-square"></i></span>ACL 2026, Findings, San Diego, USA
                                                 </p>
-                                            </div><!--text-muted-->
-                                        </div><!--panel/panel-small-->
+                                            </div>
+                                        </div>
                                     </div>
-
-
 
 
                                     <div>
@@ -988,12 +984,13 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>ICLR 2026, Rio de Janeiro, Brazil
+                                                            data-feather="message-square"></i></span>ICLR 2026, Rio de Janeiro, Brazil [#Poster] <a
+                                                        href="https://github.com/cyChen2003/Ghost-EI/"
+                                                        target="_blank">[#Resources]</a>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-
 
 
                                     <div>
@@ -1025,19 +1022,19 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>NeurIPS 2025, San Diego, USA
+                                                            data-feather="message-square"></i></span>NeurIPS 2025, San Diego, USA [#Poster] <a
+                                                        href="https://huggingface.co/datasets/yxwang/SafeVid-350K/"
+                                                        target="_blank">[#Resources]</a>
                                                 </p>
                                             </div><!--text-muted-->
                                         </div><!--panel/panel-small-->
                                     </div>
 
 
-
-
                                     <div>
                                         <div class="panel-small single-post box-shadow-wrap-normal">
                                             <div class="index-post-img-small post-feature index-img-small">
-                                                <a href="https://ai45lab.github.io/OpenRT/" target="_blank">
+                                                <a href="https://arxiv.org/abs/2601.01592" target="_blank">
                                                     <div class="item-thumb-small lazy"
                                                         style="width: 100%; padding-top: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
                                                         <img src="./figures/cover_openrt.png" class="post-pic lazy"
@@ -1061,16 +1058,15 @@
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
                                                             data-feather="message-square"></i></span>OpenRT Technical
-                                                    Report 2026, Shanghai, China
+                                                    Report 2026, Shanghai, China <a
+                                                        href="https://ai45lab.github.io/OpenRT/"
+                                                        target="_blank">[#Resources]</a>
                                                 </p>
                                             </div><!--text-muted-->
                                         </div><!--panel/panel-small-->
                                     </div>
 
 
-
-
-                                    
                                     <div>
                                         <div class="panel-small single-post box-shadow-wrap-normal">
                                             <div class="index-post-img-small post-feature index-img-small">
@@ -1097,25 +1093,25 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>ACL 2026, San Diego, USA
+                                                            data-feather="message-square"></i></span>ACL 2026, San Diego, USA <a
+                                                        href="https://github.com/Carol-gutianle/LatentSafety/"
+                                                        target="_blank">[#Resources]</a>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
 
 
-
-
                                     <div>
                                         <div class="panel-small single-post box-shadow-wrap-normal">
                                             <div class="index-post-img-small post-feature index-img-small">
-                                                <!--<a href="https://arxiv.org/abs/2506.16078" target="_blank">-->
+                                                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/37917" target="_blank">
                                                 <div class="item-thumb-small lazy"
                                                     style="width: 100%; padding-top: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
                                                     <img src="./figures/cover_cadiff.png" class="post-pic lazy"
                                                         style="width: 100%; height: 100%; object-fit: cover;">
                                                 </div>
-                                                <!--</a>-->
+                                                </a>
                                             </div>
                                             <div class="post-meta wrapper-lg padder-v"
                                                 style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
@@ -1133,15 +1129,11 @@
                                                 </p>
                                                 <p style="text-align: justify;"><span
                                                         class="right-small-icons m-r-sm"><i
-                                                            data-feather="message-square"></i></span>AAAI 2026, Singapore
+                                                            data-feather="message-square"></i></span>AAAI 2026, Singapore [#Poster]
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
 
 
                                     <div>
@@ -1166,12 +1158,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
-
-
 
 
                                     <!--
@@ -1231,8 +1217,6 @@
                                     </div>
 
 
-
-
                                     <div>
                                         <div class="single-post panel-small box-shadow-wrap-normal">
                                             <div class="post-meta wrapper-lg padder-v">
@@ -1259,30 +1243,11 @@
                                     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 </div>
-
 
 
                             </div>
                         </div>
-
-
 
 
                         <!-- 实习 Internship -->
@@ -1297,7 +1262,6 @@
                                     <h2 id="Internship" style="margin-top: 100vh;">Internship</h2>
                                 </div>
                             </div>
-
 
 
                             <div class="panel-small single-post box-shadow-wrap-normal">
@@ -1339,7 +1303,6 @@
                                 </div>
                             </div>
                         </div>
-
 
 
                         <!-- 服务 Service -->
@@ -1403,8 +1366,6 @@
                                     </div>
 
 
-
-
                                     <div>
                                         <div class="panel-small single-post box-shadow-wrap-normal">
                                             <div class="index-post-img-small post-feature index-img-small">
@@ -1445,7 +1406,6 @@
                                             </div>
                                         </div>
                                     </div>
-
 
 
                                     <div>
@@ -1491,11 +1451,7 @@
                                     </div>
 
 
-
-
-
                                 </div>
-
 
 
                             </div>
@@ -1503,10 +1459,6 @@
                         -->
 
                     </div>
-
-
-
-
 
 
                     <!-- 爱好 Pastimes -->
@@ -1521,7 +1473,6 @@
                                 <h2 id="Pastimes" style="margin-top: 100vh;">Pastimes</h2>
                             </div>
                         </div>
-
 
 
                         <div class="panel-small single-post box-shadow-wrap-normal">
@@ -1547,34 +1498,7 @@
                         </div>
 
 
-
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 </div> <!--分页首页按钮-->
@@ -1587,13 +1511,14 @@
                         padding: 6px 12px;
                     }
                 </style>
+                <!-- [/main center column] -->
         </div>
 
     </div>
+    <!-- [rightAside] widgets: resume, contact, links -->
     <!--首页右侧栏-->
     <aside id="rightAside" class="asideBar col w-md bg-white-only bg-auto no-border-xs" role="complementary">
         <div id="sidebar">
-
 
 
             <!--简历-->
@@ -1759,9 +1684,6 @@
             </section>
 
 
-
-
-
             <!--发表信息-->
             <section id="blog_info" class="widget widget_categories wrapper-md clear" style="margin-top: -10px;">
                 <h5 class="widget-title m-t-none text-md">Pub Sum</h5>
@@ -1777,8 +1699,6 @@
                                 data-feather="hash"></i></span><span class="badge pull-right">3</span>First Author</li>
                 </ul>
             </section>
-
-
 
 
             <!--备忘录-->
@@ -2002,7 +1922,7 @@
                 </style>
 
 
-                <!-- 
+                <!--
 
                 <div class="a_box">
                     <h5>
@@ -2032,7 +1952,7 @@
                             var EndTime = new Date('2025/09/25 19:59:59');
                             var NowTime = new Date();
                             var t = EndTime.getTime() - NowTime.getTime();
-                            var d = Math.floor(t/1000/60/60/24); 
+                            var d = Math.floor(t/1000/60/60/24);
                             var h = Math.floor(t/1000/60/60%24);
                             var m = Math.floor(t/1000/60%60);
                             var s = Math.floor(t/1000%60);
@@ -2076,7 +1996,6 @@
                     </h5>
                 </div>
 
-                
 
 <div class="a_box">
 	<h4><font color=#C2C4C3>Test</font></h4>
@@ -2105,9 +2024,6 @@
 <div class="trans_box">
 	<h4><font color=#C2C4C3>Test</font></h4>
 </div>
-
-
-
 
 
 <div class="d_box">
@@ -2142,8 +2058,6 @@
                 <div class="tags l-h-2x">
 
 
-
-
                     <div class="links_box">
                         <a href="https://www.scifac.hku.hk/" target="_blank"><img src="./figures/institution_hkusci.png"
                                 style="height: 26px; width:auto; float:left; margin:10px 0px 0px 0px;"></a>
@@ -2170,7 +2084,6 @@
                             <font color="#E3E3E3">Supervisor</font>
                         </h5>
                     </div>
-
 
 
                     <div class="links_box">
@@ -2311,17 +2224,16 @@
                     </div>
 
 
-
                 </div>
             </section>
 
 
-
-
         </div>
     </aside>
+    <!-- [/rightAside] -->
     </div>
     </main>
+    <!-- [footer area] back-to-top + app-footer -->
     <!-- footer -->
     </div><!-- /content -->
 
@@ -2346,14 +2258,10 @@
         </div>
     </footer>
 
-
-
+    <!-- [/layout #alllayout] -->
     </div><!--end of .app app-header-fixed-->
 
-
-
-
-
+    <!-- [deferred scripts] theme + pjax + smoothscroll + custom -->
 
     <!--定义全局变量-->
 
@@ -2366,15 +2274,9 @@
     <!--主题核心js-->
 
 
-
-
-
     <script src="./configurations/function.min.js?v=9.2.120230801501"></script>
 
     <script src="./configurations/core.min.js?v=9.2.120230801501"></script>
-
-
-
 
 
     <!--主题组件js加载-->
@@ -2384,8 +2286,6 @@
     <script src="./configurations/SmoothScroll.min.js"></script>
 
     <!--主题组件js加载结束-->
-
-
 
 
     <!--用户自定义js-->
