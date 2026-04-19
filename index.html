@@ -139,6 +139,14 @@
     <link id="cool_opacity" rel="stylesheet" href="./configurations/coolopacity.min.css" type="text/css" />
 
     <style>
+        html,
+        body {
+            overscroll-behavior-y: none;
+            /* 禁止上下边界溢出 */
+            overscroll-behavior-x: none;
+            /* 禁止左右边界溢出 */
+        }
+
         .cool-transparent .app:before {
             background-color: rgba(0, 0, 0, 0.3) !important;
         }
