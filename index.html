@@ -879,7 +879,7 @@
                                             cover: "./figures/cover/cover_agenticeval.png",
                                             title: "[ACL 2026] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models",
                                             authors: "Yixu Wang, Xin Wang, <b>Yang Yao</b>, Xinyuan Li, Xibang Yang, Yan Teng, Xingjun Ma, Yingchun Wang",
-                                            venue: "ACL 2026, Findings, San Diego, USA"
+                                            venue: "ACL 2026, Findings, San Diego, USA [#Poster]"
                                         },
                                         {
                                             card: "small",
@@ -911,7 +911,7 @@
                                             cover: "./figures/cover/cover_latent.png",
                                             title: "[ACL 2026] Probing the Safety Robustness of LLMs in Latent Space",
                                             authors: "Tianle Gu, Kexin Huang, Zongqi Wang, Yixu Wang, Jie Li, Xin Wang, <b>Yang Yao</b>, Yujiu Yang, Yan Teng, Yingchun Wang",
-                                            venue: "ACL 2026, San Diego, USA <a href=\"https://github.com/Carol-gutianle/LatentSafety/\" target=\"_blank\">[#Resources]</a>"
+                                            venue: "ACL 2026, San Diego, USA [#Poster] <a href=\"https://github.com/Carol-gutianle/LatentSafety/\" target=\"_blank\">[#Resources]</a>"
                                         },
                                         {
                                             card: "small",
@@ -1207,183 +1207,60 @@
                                                 </div>
                                             </summary>
                                             <div class="voyage-content">
-                                                <div class="pastimes-card-grid">
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_cnhongkong.png" alt="Hong Kong" style="width: 100%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Hong Kong</p>
-                                </div>
+                                                <div class="pastimes-card-grid" id="pastimes-stamp-list"></div>
+                                                <script>
+                                                    var PASTIME_STAMPS = [
+                                                        { src: "./figures/pastimes/pastimes_cnhongkong.png", label: "Hong Kong", width: "100%" },
+                                                        { src: "./figures/pastimes/pastimes_cnmacao.png", label: "Macao", width: "75%" },
+                                                        { src: "./figures/pastimes/pastimes_cntaiwan.png", label: "Taiwan", width: "100%" },
+                                                        { src: "./figures/pastimes/pastimes_germany.png", label: "Germany" },
+                                                        { src: "./figures/pastimes/pastimes_france.png", label: "France" },
+                                                        { src: "./figures/pastimes/pastimes_italy.png", label: "Italy" },
+                                                        { src: "./figures/pastimes/pastimes_switzerland.png", label: "Switzerland" },
+                                                        { src: "./figures/pastimes/pastimes_vatican.png", label: "Vatican" },
+                                                        { src: "./figures/pastimes/pastimes_japan.png", label: "Japan", width: "85%" },
+                                                        { src: "./figures/pastimes/pastimes_egypt.png", label: "Egypt", width: "90%" },
+                                                        { src: "./figures/pastimes/pastimes_norway.png", label: "Norway" },
+                                                        { src: "./figures/pastimes/pastimes_longyearbyen.png", label: "Longyearbyen", favorite: true },
+                                                        { src: "./figures/pastimes/pastimes_finland.png", label: "Finland" },
+                                                        { src: "./figures/pastimes/pastimes_sweden.png", label: "Sweden", width: "85%" },
+                                                        { src: "./figures/pastimes/pastimes_denmark.png", label: "Denmark", width: "85%" },
+                                                        { src: "./figures/pastimes/pastimes_austria.png", label: "Austria", width: "85%" },
+                                                        { src: "./figures/pastimes/pastimes_czech.png", label: "Czech", width: "85%" },
+                                                        { src: "./figures/pastimes/pastimes_slovakia.png", label: "Slovakia", width: "90%" },
+                                                        { src: "./figures/pastimes/pastimes_hungary.png", label: "Hungary", width: "90%" },
+                                                        { src: "./figures/pastimes/pastimes_turkey.png", label: "Turkey", width: "90%" },
+                                                        { src: "./figures/pastimes/pastimes_korea.png", label: "South Korea", width: "90%" },
+                                                        { src: "./figures/pastimes/pastimes_ireland.png", label: "Ireland", width: "90%" },
+                                                        { src: "./figures/pastimes/pastimes_australia.png", label: "Australia", width: "90%" },
+                                                        { src: "./figures/pastimes/pastimes_qatar.png", label: "Qatar", width: "95%" },
+                                                        { src: "./figures/pastimes/pastimes_arabia.png", label: "Saudi Arabia", width: "85%" }
+                                                    ];
 
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_cnmacao.png" alt="Macao" style="width: 75%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Macao</p>
-                                </div>
+                                                    function renderPastimeStamp(stamp) {
+                                                        var width = stamp.width || "80%";
+                                                        var favorite = stamp.favorite ? " pastimes-stamp-favorite" : "";
+                                                        return (
+                                                            '<div class="pastimes-stamp' + favorite + ' box-shadow-wrap-normal">' +
+                                                            '<div class="pastimes-stamp-img-wrap">' +
+                                                            '<img src="' + stamp.src + '" alt="' + stamp.label + '" style="width: ' + width + '; height: auto;">' +
+                                                            "</div>" +
+                                                            '<p class="pastimes-stamp-label">' + stamp.label + "</p>" +
+                                                            "</div>"
+                                                        );
+                                                    }
 
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_cntaiwan.png" alt="Taiwan" style="width: 100%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Taiwan</p>
-                                </div>
+                                                    function renderPastimeStamps(containerId) {
+                                                        var el = document.getElementById(containerId);
+                                                        if (!el) {
+                                                            return;
+                                                        }
+                                                        el.innerHTML = PASTIME_STAMPS.map(renderPastimeStamp).join("\n");
+                                                    }
 
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_germany.png" alt="Germany" style="width: 80%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Germany</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_france.png" alt="France" style="width: 80%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">France</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_italy.png" alt="Italy" style="width: 80%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Italy</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_switzerland.png" alt="Switzerland" style="width: 80%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Switzerland</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_vatican.png" alt="Vatican" style="width: 80%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Vatican</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_japan.png" alt="Japan" style="width: 85%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Japan</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_egypt.png" alt="Egypt" style="width: 90%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Egypt</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_norway.png" alt="Norway" style="width: 80%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Norway</p>
-                                </div>
-
-                                <div class="pastimes-stamp pastimes-stamp-favorite box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_longyearbyen.png" alt="Longyearbyen" style="width: 80%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Longyearbyen</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_finland.png" alt="Finland" style="width: 80%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Finland</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_sweden.png" alt="Sweden" style="width: 85%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Sweden</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_denmark.png" alt="Denmark" style="width: 85%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Denmark</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_austria.png" alt="Austria" style="width: 85%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Austria</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_czech.png" alt="Czech" style="width: 85%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Czech</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_slovakia.png" alt="Slovakia" style="width: 90%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Slovakia</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_hungary.png" alt="Hungary" style="width: 90%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Hungary</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_turkey.png" alt="Turkey" style="width: 90%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Turkey</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_korea.png" alt="South Korea" style="width: 90%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">South Korea</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_ireland.png" alt="Ireland" style="width: 90%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Ireland</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_australia.png" alt="Australia" style="width: 90%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Australia</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_qatar.png" alt="Qatar" style="width: 95%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Qatar</p>
-                                </div>
-
-                                <div class="pastimes-stamp box-shadow-wrap-normal">
-                                    <div class="pastimes-stamp-img-wrap">
-                                        <img src="./figures/pastimes/pastimes_arabia.png" alt="Saudi Arabia" style="width: 85%; height: auto;">
-                                    </div>
-                                    <p class="pastimes-stamp-label">Saudi Arabia</p>
-                                </div>
-                            </div>
-                        </div>
+                                                    renderPastimeStamps("pastimes-stamp-list");
+                                                </script>
+                                            </div>
                                         </details>
                                     </div>
                                 </div>
@@ -1458,139 +1335,80 @@
                 <h5 class="widget-title m-t-none text-md" style="margin-bottom: 20px;">Contact Info</h5>
 
 
-                <ul class="list-group box-wrap-normal" style="margin-top: -10px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
-                                data-feather="mail"></i></span>
-                        Email Address
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">
-                                yaoyangacademia@outlook.com<br>yeungyiu@connect.hku.hk</p>
-                        </i>
-                    </li>
-                </ul>
+                <style>
+                    #contact-list .contact-line {
+                        display: flex;
+                        align-items: center;
+                    }
 
+                    #contact-list .blog-info-icons {
+                        float: none;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: auto;
+                        margin: 0 5px 0 0;
+                        overflow: visible;
+                    }
 
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
-                                data-feather="archive"></i></span>
-                        Google
-                            Scholar
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">
-                                <a href="https://scholar.google.com/citations?user=a8-jrAoAAAAJ&hl=en" target="_blank">
-                                YANG YAO's Profile</a></p>
-                        </i>
-                    </li>
-                </ul>
+                    #contact-list .contact-value {
+                        display: block;
+                        margin: 0;
+                        text-align: right;
+                        font-size: 11px;
+                        font-style: italic;
+                        line-height: 1.42857143;
+                    }
 
+                    #contact-list .list-group-item {
+                        padding-top: 5px;
+                        padding-bottom: 4px;
+                    }
 
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
-                                data-feather="github"></i></span>
-                        GitHub
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;"><a href="https://github.com/evigbyen" target="_blank">EVIGBYEN #
-                                YAO YANG</a></p>
-                        </i>
-                    </li>
-                </ul>
+                    #contact-list > ul:first-child .list-group-item {
+                        padding-top: 12px;
+                    }
+                </style>
+                <div id="contact-list"></div>
+                <script>
+                    var CONTACTS = [
+                        { icon: "mail", label: "Email Address", value: "yaoyangacademia@outlook.com<br>yeungyiu@connect.hku.hk" },
+                        { icon: "archive", label: "Google Scholar", value: "<a href=\"https://scholar.google.com/citations?user=a8-jrAoAAAAJ&hl=en\" target=\"_blank\">YANG YAO's Profile</a>" },
+                        { icon: "github", label: "GitHub", value: "<a href=\"https://github.com/evigbyen\" target=\"_blank\">EVIGBYEN # YAO YANG</a>" },
+                        { icon: "x", label: "X (formerly Twitter)", value: "<a href=\"https://x.com/yaoyangacademia\" target=\"_blank\">@yaoyangacademia</a>" },
+                        { icon: "message-circle", label: "WeChat", value: "Currently Unavailable" },
+                        { icon: "slack", label: "Slack", value: "Currently Unavailable" },
+                        { icon: "youtube", label: "YouTube", value: "Currently Unavailable" },
+                        { icon: "linkedin", label: "LinkedIn", value: "Currently Unavailable" },
+                        { icon: "facebook", label: "FaceBook", value: "Currently Unavailable" },
+                        { icon: "gitlab", label: "GitLab", value: "Currently Unavailable" },
+                        { icon: "instagram", label: "Instagram", value: "Currently Unavailable" }
+                    ];
 
+                    function renderContact(contact, index) {
+                        var marginTop = index === 0 ? "-10px" : "-20px";
+                        return (
+                            '<ul class="list-group box-wrap-normal" style="margin-top: ' + marginTop + ';">' +
+                            '<li class="list-group-item text-second">' +
+                            '<div class="contact-line"><span class="blog-info-icons"><i data-feather="' + contact.icon + '"></i></span>' +
+                            contact.label +
+                            "</div>" +
+                            '<div class="contact-value">' + contact.value + "</div>" +
+                            "</li>" +
+                            "</ul>"
+                        );
+                    }
 
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
-                                data-feather="message-circle"></i></span>
-                        WeChat
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">
-                                Currently
-                                Unavailable</p>
-                        </i>
-                    </li>
-                </ul>
+                    function renderContacts(containerId) {
+                        var el = document.getElementById(containerId);
+                        if (!el) {
+                            return;
+                        }
+                        el.innerHTML = CONTACTS.map(renderContact).join("\n");
+                    }
 
-
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
-                                data-feather="slack"></i></span>
-                        Slack
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">
-                                Currently
-                                Unavailable
-                            </p>
-                        </i>
-                    </li>
-                </ul>
-
-
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
-                                data-feather="x"></i></span>
-                        X
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently
-                                Unavailable</p>
-                        </i>
-                    </li>
-                </ul>
-
-
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
-                                data-feather="youtube"></i></span>
-                        YouTube
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently
-                                Unavailable</p>
-                        </i>
-                    </li>
-                </ul>
-
-
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"><i
-                                data-feather="linkedin"></i></span>
-                        LinkedIn
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently
-                                Unavailable</p>
-                        </i>
-                    </li>
-                </ul>
-
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
-                                data-feather="facebook"></i></span>
-                        FaceBook
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently
-                                Unavailable</p>
-                        </i>
-                    </li>
-                </ul>
-
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
-                                data-feather="gitlab"></i></span>
-                        GitLab
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently
-                                Unavailable</p>
-                        </i>
-                    </li>
-                </ul>
-
-                <ul class="list-group box-wrap-normal" style="margin-top: -20px;">
-                    <li class="list-group-item text-second"><span class="blog-info-icons"> <i
-                                data-feather="instagram"></i></span>
-                        Instagram
-                        <i>
-                            <p class="pull-right" style="text-align: right; font-size: 11px;">Currently
-                                Unavailable</p>
-                        </i>
-                    </li>
-
-                </ul>
+                    renderContacts("contact-list");
+                </script>
             </section>
 
 
@@ -2072,216 +1890,66 @@
                 <div class="tags l-h-2x">
 
 
-                    <div class="links_box">
-                        <a href="https://liuzhuang13.github.io/" target="_blank"><img
-                                src="./figures/scholar/scholar_zhuangliu.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Zhuang Liu
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Supervisor</font>
-                        </h5>
-                    </div>
+                    <div id="external-link-list"></div>
+                    <script>
+                        var EXTERNAL_LINKS = [
+                            { card: "person", href: "https://liuzhuang13.github.io/", src: "./figures/scholar/scholar_zhuangliu.png", name: "Zhuang Liu", role: "Supervisor" },
+                            { card: "person", href: "https://tonychen.xyz/", src: "./figures/scholar/scholar_haozhechen.png", name: "Haozhe Chen", role: "Collaborator" },
+                            { card: "institution", href: "https://www.scifac.hku.hk/", src: "./figures/institution/institution_hkusci.png", name: "Faculty of Science", subtitle: "The University of Hong Kong", height: "26px" },
+                            { card: "person", href: "https://leiyw.github.io/", src: "./figures/scholar/scholar_yunwenlei.png", name: "Yunwen Lei", role: "Supervisor" },
+                            { card: "institution", href: "https://ai45.shlab.org.cn/", src: "./figures/institution/institution_ai45.png", name: "AI45 Laboratory", subtitle: "Center for Safe and Trustworthy AI", height: "18px" },
+                            { card: "person", href: "https://tengyan666.github.io/", src: "./figures/scholar/scholar_yanteng.png", name: "Yan Teng", role: "Supervisor" },
+                            { card: "person", href: "https://scholar.google.com/citations?user=EYP7wNIAAAAJ&hl=en", src: "./figures/scholar/scholar_yixuwang.png", name: "Yixu Wang", role: "Collaborator" },
+                            { card: "person", src: "./figures/scholar/scholar_jieli.png", name: "Jie Li", role: "Collaborator" },
+                            { card: "person", href: "https://lingyuli-cogs.github.io/", src: "./figures/scholar/scholar_lingyuli.png", name: "Lingyu Li", role: "Collaborator" },
+                            { card: "person", src: "./figures/scholar/scholar_lujundongli.png", name: "Lujundong Li", role: "Collaborator" },
+                            { card: "person", href: "https://carol-gutianle.github.io/", src: "./figures/scholar/scholar_tianlegu.png", name: "Tianle Gu", role: "Collaborator" },
+                            { card: "person", src: "./figures/scholar/scholar_xuantong.png", name: "Xuan Tong", role: "Collaborator" },
+                            { card: "person", href: "https://xinwong.github.io/", src: "./figures/scholar/scholar_xinwang.png", name: "Xin Wang", role: "Collaborator" },
+                            { card: "person", href: "https://scholar.google.com/citations?user=Nt2YnmQAAAAJ&hl=en", src: "./figures/scholar/scholar_ruofanwang.png", name: "Ruofan Wang", role: "Collaborator" }
+                        ];
 
+                        function externalLinkImage(item, style) {
+                            var img = '<img src="' + item.src + '" style="' + style + '">';
+                            if (!item.href) {
+                                return img;
+                            }
+                            return '<a href="' + item.href + '" target="_blank">' + img + "</a>";
+                        }
 
-                    <div class="links_box">
-                        <a href="https://tonychen.xyz/" target="_blank"><img
-                                src="./figures/scholar/scholar_haozhechen.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Haozhe Chen
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
+                        function renderExternalLink(item) {
+                            if (item.card === "institution") {
+                                return (
+                                    '<div class="links_box">' +
+                                    externalLinkImage(item, "height: " + item.height + "; width:auto; float:left; margin:10px 0px 0px 0px;") +
+                                    '<div style="clear:both;"></div>' +
+                                    '<h5><font color="#FFFFFF" size="3">' + item.name + "</font></h5>" +
+                                    '<h5><font color="#E3E3E3">' + item.subtitle + "</font></h5>" +
+                                    "</div>"
+                                );
+                            }
+                            return (
+                                '<div class="links_box">' +
+                                externalLinkImage(item, "height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;") +
+                                "<h5>" +
+                                '<font color="#FFFFFF" size="3">' + item.name + "</font>" +
+                                "<br>" +
+                                '<font color="#E3E3E3">' + item.role + "</font>" +
+                                "</h5>" +
+                                "</div>"
+                            );
+                        }
 
+                        function renderExternalLinks(containerId) {
+                            var el = document.getElementById(containerId);
+                            if (!el) {
+                                return;
+                            }
+                            el.innerHTML = EXTERNAL_LINKS.map(renderExternalLink).join("\n");
+                        }
 
-                    <div class="links_box">
-                        <a href="https://www.scifac.hku.hk/" target="_blank"><img
-                                src="./figures/institution/institution_hkusci.png"
-                                style="height: 26px; width:auto; float:left; margin:10px 0px 0px 0px;"></a>
-                        <div style="clear:both;"></div>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Faculty of Science
-                            </font>
-                        </h5>
-                        <h5>
-                            <font color="#E3E3E3">The University of Hong Kong</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <a href="https://leiyw.github.io/" target="_blank"><img
-                                src="./figures/scholar/scholar_yunwenlei.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Yunwen Lei
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Supervisor</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <a href="https://ai45.shlab.org.cn/" target="_blank"><img
-                                src="./figures/institution/institution_ai45.png"
-                                style="height: 18px; width:auto; float:left; margin:10px 0px 0px 0px;"></a>
-                        <div style="clear:both;"></div>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                AI45 Laboratory
-                            </font>
-                        </h5>
-                        <h5>
-                            <font color="#E3E3E3">Center for Safe and Trustworthy AI</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <a href="https://tengyan666.github.io/" target="_blank"><img
-                                src="./figures/scholar/scholar_yanteng.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Yan Teng
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Supervisor</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <a href="https://scholar.google.com/citations?user=EYP7wNIAAAAJ&hl=en" target="_blank"><img
-                                src="./figures/scholar/scholar_yixuwang.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Yixu Wang
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
-
-
-                    <!--
-                    <div class="links_box">
-                        <img src="./figures/scholar/scholar_yingchunwang.png"
-                            style="height: 35px; width:auto; float:left; margin:8px 5px 5px 0px;">
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                <a href="https://openreview.net/profile?id=~Yingchun_Wang2/" target="_blank">Yingchun Wang</a>
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Supervisor</font>
-                        </h5>
-                    </div>
-                     -->
-
-
-                    <div class="links_box">
-                        <img src="./figures/scholar/scholar_jieli.png"
-                            style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;">
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Jie Li
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <a href="https://lingyuli-cogs.github.io/" target="_blank"><img
-                                src="./figures/scholar/scholar_lingyuli.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Lingyu Li
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <img src="./figures/scholar/scholar_lujundongli.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;">
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Lujundong Li
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <a href="https://carol-gutianle.github.io/" target="_blank"><img
-                                src="./figures/scholar/scholar_tianlegu.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Tianle Gu
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <img src="./figures/scholar/scholar_xuantong.png"
-                            style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;">
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Xuan Tong
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <a href="https://xinwong.github.io/" target="_blank"><img
-                                src="./figures/scholar/scholar_xinwang.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Xin Wang
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
-
-
-                    <div class="links_box">
-                        <a href="https://scholar.google.com/citations?user=Nt2YnmQAAAAJ&hl=en" target="_blank"><img
-                                src="./figures/scholar/scholar_ruofanwang.png"
-                                style="height: 40px; width:auto; float:left; margin:5px 5px 5px 0px;"></a>
-                        <h5>
-                            <font color="#FFFFFF" size="3">
-                                Ruofan Wang
-                            </font>
-                            <br>
-                            <font color="#E3E3E3">Collaborator</font>
-                        </h5>
-                    </div>
+                        renderExternalLinks("external-link-list");
+                    </script>
 
 
 
